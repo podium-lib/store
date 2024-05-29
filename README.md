@@ -1,6 +1,6 @@
 # @podium/store
 
-This is a client-side library that provides a reactive data store using [nanostores](https://github.com/stores/stores) on top of [@podium/browser](https://github.com/podium-lib/browser)'s `MessageBus`. It includes some ready-made stores and helpers for you to make reactive stores for your own events.
+This is a client-side library that provides a reactive data store using [nanostores](https://github.com/nanostores/nanostores) on top of [@podium/browser](https://github.com/podium-lib/browser)'s `MessageBus`. It includes some ready-made stores and helpers for you to make reactive stores for your own events.
 
 By using reactive state backed by `MessageBus` you can seamlessly share state between different parts of a Podium application. If a podlet changes the value of shared state, all other podlets using that value can update.
 
@@ -39,10 +39,10 @@ export function logOut() {
 
 Use the reactive store to do minimal updates of your UI when state changes. Nanostores supports multiple view frameworks:
 
--   [React and Preact](https://github.com/stores/stores?tab=readme-ov-file#react--preact)
--   [Lit](https://github.com/stores/stores?tab=readme-ov-file#lit)
--   [Vue](https://github.com/stores/stores?tab=readme-ov-file#vue)
--   [Vanilla JS](https://github.com/stores/stores?tab=readme-ov-file#vanilla-js)
+-   [React and Preact](https://github.com/nanostores/nanostores?tab=readme-ov-file#react--preact)
+-   [Lit](https://github.com/nanostores/nanostores?tab=readme-ov-file#lit)
+-   [Vue](https://github.com/nanostores/nanostores?tab=readme-ov-file#vue)
+-   [Vanilla JS](https://github.com/nanostores/nanostores?tab=readme-ov-file#vanilla-js)
 
 This example shows a React component:
 
@@ -85,7 +85,7 @@ By using the [included helper](#mapchannel-topic-initialvalue) you can make your
 
 ### `$authentication`
 
-Type: [`map`](https://github.com/stores/stores?tab=readme-ov-file#maps)
+Type: [`map`](https://github.com/nanostores/nanostores?tab=readme-ov-file#maps)
 
 ```js
 import { $authentication } from '@podium/store';

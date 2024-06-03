@@ -37,7 +37,7 @@
     "types": "tsc --declaration --emitDeclarationOnly"
   },
   "dependencies": {
-    "@podium/browser": "1.2.2",
+    "@podium/browser": "1.2.3",
     "nanostores": "0.10.3"
   },
   "devDependencies": {

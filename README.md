@@ -142,7 +142,7 @@ This method requires the following arguments:
 ```js
 import { deepMap, listenKeys } from '@podium/store';
 
-export const $profile = deepMap({
+export const $profile = deepMap('user', 'details', {
     hobbies: [
         {
             name: 'woodworking',

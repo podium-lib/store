@@ -1,6 +1,6 @@
 {
   "name": "@podium/store",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "./dist/store.js",
   "types": "./types/store.d.ts",

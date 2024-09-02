@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@podium/browser": "1.3.0",
-    "nanostores": "0.11.2"
+    "nanostores": "0.11.3"
   },
   "devDependencies": {
     "@semantic-release/changelog": "6.0.3",

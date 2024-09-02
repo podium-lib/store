@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/podium-lib/store/compare/v1.0.3...v1.0.4) (2024-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nanostores to v0.11.3 ([3a55c3f](https://github.com/podium-lib/store/commit/3a55c3f7eb197556666209084d648173b2e38067))
+
 ## [1.0.3](https://github.com/podium-lib/store/compare/v1.0.2...v1.0.3) (2024-08-12)
 
 

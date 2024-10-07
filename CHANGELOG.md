@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/podium-lib/store/compare/v1.0.4...v1.0.5) (2024-10-07)
+
+
+### Bug Fixes
+
+* handle the loop guard outside the store value ([#23](https://github.com/podium-lib/store/issues/23)) ([2644a7d](https://github.com/podium-lib/store/commit/2644a7d99e68022ae3198dd9f62f886ebfbdcbc8))
+
 ## [1.0.4](https://github.com/podium-lib/store/compare/v1.0.3...v1.0.4) (2024-09-02)
 
 

@@ -117,16 +117,18 @@ export function map(channel, topic, initialValue) {
     /** @type {MapStore<T & StoreValue>} */
     const $store = nsMap(initial);
 
+    let source = 'app';
     /** @type {import('@podium/browser').MessageHandler<T>} */
     const listener = (event) => {
-        $store.set({ ...event.payload, source: 'bus' });
+        source = 'bus';
+        $store.set({ ...event.payload });
     };
     messageBus.subscribe(channel, topic, listener);
 
-    $store.listen(({ source, ...rest }) => {
+    $store.listen((value) => {
         // To avoid an infinite loop we fire this only when the source of the change is the app, not the message bus.
         if (source !== 'bus') {
-            messageBus.publish(channel, topic, { ...rest });
+            messageBus.publish(channel, topic, value);
         }
     });
 
@@ -167,16 +169,18 @@ export function deepMap(channel, topic, initialValue) {
     // @ts-expect-error https://github.com/microsoft/TypeScript/issues/34933
     const $store = nsDeepMap(initial);
 
+    let source = 'app';
     /** @type {import('@podium/browser').MessageHandler<T>} */
     const listener = (event) => {
-        $store.set({ ...event.payload, source: 'bus' });
+        source = 'bus';
+        $store.set({ ...event.payload });
     };
     messageBus.subscribe(channel, topic, listener);
 
-    $store.listen(({ source, ...rest }) => {
+    $store.listen((value) => {
         // To avoid an infinite loop we fire this only when the source of the change is the app, not the message bus.
         if (source !== 'bus') {
-            messageBus.publish(channel, topic, { ...rest });
+            messageBus.publish(channel, topic, value);
         }
     });
 

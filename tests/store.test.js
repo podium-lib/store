@@ -37,7 +37,7 @@ test('map returns a MapStore connected to the Podium MessageBus', () => {
     const bus = new MessageBus();
     bus.publish('foo', 'bar', { message: 'bar' });
 
-    assert.deepStrictEqual($foo.value, { message: 'bar', source: 'bus' });
+    assert.deepStrictEqual($foo.value, { message: 'bar' });
 });
 
 test('deepMap returns a DeepMapStore connected to the Podium MessageBus', () => {
@@ -74,7 +74,6 @@ test('deepMap returns a DeepMapStore connected to the Podium MessageBus', () => 
             },
         ],
         skills: [['Carpentry', 'Sanding'], ['Varnishing']],
-        source: 'bus',
     });
 });
 
@@ -94,4 +93,51 @@ test('initialValue is ignored if a value exists on the message bus', () => {
         user: { displayName: 'barfoo' },
     });
     assert.deepStrictEqual($deepMap.value, { user: { displayName: 'foobar' } });
+});
+
+test('does not publish a message on the bus if the bus listener was what wrote to the store', () => {
+    const bus = new MessageBus();
+
+    const $atom = atom('atom', 'test', 'Value');
+    const $map = map('map', 'test', { title: 'Value' });
+    const $deepMap = deepMap('deepMap', 'test', {
+        user: { displayName: 'barfoo' },
+    });
+
+    const atomSub = test.mock.fn();
+    bus.subscribe('atom', 'test', atomSub);
+
+    const mapSub = test.mock.fn();
+    bus.subscribe('map', 'test', mapSub);
+
+    const deepMapSub = test.mock.fn();
+    bus.subscribe('deepMap', 'test', deepMapSub);
+
+    bus.publish('atom', 'test', 'Value');
+    assert.equal($atom.value, 'Value');
+    assert.equal(
+        atomSub.mock.callCount(),
+        1,
+        'Expected the atom to not republish the same value to the MessageBus',
+    );
+
+    bus.publish('map', 'test', { title: 'Value' });
+    assert.deepStrictEqual($map.value, { title: 'Value' });
+    assert.equal(
+        mapSub.mock.callCount(),
+        1,
+        'Expected the map to not republish the same value to the MessageBus',
+    );
+
+    bus.publish('deepMap', 'test', {
+        user: { displayName: 'barfoo' },
+    });
+    assert.deepStrictEqual($deepMap.value, {
+        user: { displayName: 'barfoo' },
+    });
+    assert.equal(
+        deepMapSub.mock.callCount(),
+        1,
+        'Expected the deepMap to not republish the same value to the MessageBus',
+    );
 });

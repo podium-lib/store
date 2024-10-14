@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/podium-lib/store/compare/v1.0.5...v1.1.0) (2024-10-14)
+
+
+### Features
+
+* add cjs export ([#24](https://github.com/podium-lib/store/issues/24)) ([82a81fc](https://github.com/podium-lib/store/commit/82a81fcbf9ffde6063e00ed5c384e132668d23f7))
+
 ## [1.0.5](https://github.com/podium-lib/store/compare/v1.0.4...v1.0.5) (2024-10-07)
 
 

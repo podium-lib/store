@@ -186,10 +186,3 @@ export function deepMap(channel, topic, initialValue) {
 
     return $store;
 }
-
-/**
- * @typedef {object} Authentication
- * @property {string | null} token The authentication token. `null` == not logged in.
- */
-
-export const $authentication = map('system', 'authentication', { token: null });

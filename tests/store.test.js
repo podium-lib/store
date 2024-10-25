@@ -13,11 +13,7 @@ const dom = new JSDOM(html);
 globalThis.window = dom.window;
 
 const { MessageBus } = await import('@podium/browser');
-const { $authentication, atom, map, deepMap } = await import('../src/store.js');
-
-test('$authentication initial state', () => {
-    assert.deepStrictEqual($authentication.value, { token: null });
-});
+const { atom, map, deepMap } = await import('../src/store.js');
 
 test('atom returns a value connected to the Podium MessageBus', () => {
     const $reminders = atom('reminders', 'list', []);

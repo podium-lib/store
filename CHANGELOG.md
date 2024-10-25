@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/podium-lib/store/compare/v1.1.0...v2.0.0) (2024-10-25)
+
+
+### Bug Fixes
+
+* remove built-in $authentication store ([#25](https://github.com/podium-lib/store/issues/25)) ([d726b24](https://github.com/podium-lib/store/commit/d726b24e22e1511920a6744074d130959956ad80))
+
+
+### BREAKING CHANGES
+
+* $authentication is removed
+
+[1]: https://podium-lib.io/docs/guides/hybrid#message-contracts
+
 # [1.1.0](https://github.com/podium-lib/store/compare/v1.0.5...v1.1.0) (2024-10-14)
 
 

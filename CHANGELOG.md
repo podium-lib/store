@@ -1,3 +1,11 @@
+## [2.0.1](https://github.com/podium-lib/store/compare/v2.0.0...v2.0.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* atom now correctly publishes only on changes to value ([59ef7d2](https://github.com/podium-lib/store/commit/59ef7d25a09cf111116ef77fb9d9b778b10b2ec0))
+* can now publish to the message bus after receiving values from it ([2871b1a](https://github.com/podium-lib/store/commit/2871b1a5b02d1591cd760e54370055652537c414))
+
 # [2.0.0](https://github.com/podium-lib/store/compare/v1.1.0...v2.0.0) (2024-10-25)
 
 

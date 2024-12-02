@@ -129,6 +129,10 @@ export function map(channel, topic, initialValue) {
         // To avoid an infinite loop we fire this only when the source of the change is the app, not the message bus.
         if (source !== 'bus') {
             messageBus.publish(channel, topic, value);
+        } else {
+            // We got this change from the message bus.
+            // Revert to assuming we publish changes now that we're done writing.
+            source = 'app';
         }
     });
 
@@ -181,6 +185,10 @@ export function deepMap(channel, topic, initialValue) {
         // To avoid an infinite loop we fire this only when the source of the change is the app, not the message bus.
         if (source !== 'bus') {
             messageBus.publish(channel, topic, value);
+        } else {
+            // We got this change from the message bus.
+            // Revert to assuming we publish changes now that we're done writing.
+            source = 'app';
         }
     });
 

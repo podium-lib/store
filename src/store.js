@@ -92,7 +92,7 @@ export function atom(channel, topic, initialValue) {
     $store.listen((value) => {
         // Don't publish if there's already an identical message on the bus
         const lastValue = messageBus.peek(channel, topic);
-        if (value === lastValue) {
+        if (lastValue && lastValue.payload === value) {
             return;
         }
         messageBus.publish(channel, topic, value);

@@ -137,3 +137,55 @@ test('does not publish a message on the bus if the bus listener was what wrote t
         'Expected the deepMap to not republish the same value to the MessageBus',
     );
 });
+
+test('publishes a message on the bus if written to after having received a message from the bus', () => {
+    const bus = new MessageBus();
+
+    const $atom = atom('atom', 'test', 'Value');
+    const $map = map('map', 'test', { title: 'Value' });
+    const $deepMap = deepMap('deepMap', 'test', {
+        user: { displayName: 'barfoo' },
+    });
+
+    // Receive new values from the message bus
+    bus.publish('atom', 'test', 'Other value');
+    bus.publish('map', 'test', { title: 'Other value' });
+    bus.publish('deepMap', 'test', {
+        user: { displayName: 'foobar' },
+    });
+
+    assert.equal($atom.value, 'Other value');
+    assert.deepStrictEqual($map.value, { title: 'Other value' });
+    assert.deepStrictEqual($deepMap.value, {
+        user: { displayName: 'foobar' },
+    });
+
+    // Check that we publish back to the message bus on writes
+    const atomSub = test.mock.fn();
+    const mapSub = test.mock.fn();
+    const deepMapSub = test.mock.fn();
+
+    bus.subscribe('atom', 'test', atomSub);
+    bus.subscribe('map', 'test', mapSub);
+    bus.subscribe('deepMap', 'test', deepMapSub);
+
+    $map.setKey('title', 'Futurama');
+    $deepMap.setKey('user.displayName', 'Fry');
+    $atom.set('Bender');
+
+    assert.equal(
+        atomSub.mock.callCount(),
+        1,
+        'Expected the atom to publish to the MessageBus',
+    );
+    assert.equal(
+        mapSub.mock.callCount(),
+        1,
+        'Expected the map to publish to the MessageBus',
+    );
+    assert.equal(
+        deepMapSub.mock.callCount(),
+        1,
+        'Expected the deepMap to publish to the MessageBus',
+    );
+});

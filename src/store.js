@@ -3,8 +3,46 @@ import {
     atom as nsAtom,
     map as nsMap,
     deepMap as nsDeepMap,
+    clean,
+    cleanStores,
+    batched,
+    computed,
+    keepMount,
+    onMount,
+    onNotify,
+    onSet,
+    onStart,
+    onStop,
+    STORE_UNMOUNT_DELAY,
     listenKeys,
+    subscribeKeys,
+    mapCreator,
+    allTasks,
+    cleanTasks,
+    startTask,
+    task,
 } from 'nanostores';
+
+export {
+    clean,
+    cleanStores,
+    batched,
+    computed,
+    keepMount,
+    onMount,
+    onNotify,
+    onSet,
+    onStart,
+    onStop,
+    STORE_UNMOUNT_DELAY,
+    listenKeys,
+    subscribeKeys,
+    mapCreator,
+    allTasks,
+    cleanTasks,
+    startTask,
+    task,
+};
 
 /**
  * @template T
@@ -29,8 +67,6 @@ import {
  * @template {import('nanostores').BaseDeepMap} T
  * @typedef {import("nanostores").DeepMapStore<T>} DeepMapStore
  */
-
-export { listenKeys };
 
 // The messageBus reads from a global in-memory storage.
 // It can have available messages immediately after being constructed.

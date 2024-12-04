@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/podium-lib/store/compare/v2.0.1...v2.1.0) (2024-12-04)
+
+
+### Features
+
+* export the rest of nanostores API ([4dfa1c6](https://github.com/podium-lib/store/commit/4dfa1c6be52aadfe0e063c4eaf817bb07eeeccc3))
+
 ## [2.0.1](https://github.com/podium-lib/store/compare/v2.0.0...v2.0.1) (2024-12-02)
 
 

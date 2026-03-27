@@ -1,62 +1,62 @@
 {
-  "name": "@podium/store",
-  "version": "2.1.4",
-  "type": "module",
-  "main": "./dist/store.js",
-  "types": "./types/store.d.ts",
-  "exports": {
+    "name": "@podium/store",
+    "version": "2.1.4",
+    "type": "module",
+    "main": "./dist/store.js",
     "types": "./types/store.d.ts",
-    "require": "./dist/store.cjs",
-    "import": "./dist/store.js"
-  },
-  "license": "MIT",
-  "keywords": [
-    "micro services",
-    "micro frontend",
-    "podium"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/podium-lib/store.git"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "bugs": {
-    "url": "https://github.com/podium-lib/issues"
-  },
-  "homepage": "https://podium-lib.io/",
-  "files": [
-    "dist",
-    "types"
-  ],
-  "scripts": {
-    "prepublishOnly": "run-s build types",
-    "build": "run-p build:*",
-    "build:cjs": "esbuild src/store.js --outfile=dist/store.cjs --target=es2017 --format=cjs",
-    "build:esm": "esbuild src/store.js --outfile=dist/store.js --target=es2017",
-    "lint": "eslint . --ignore-pattern '/dist/'",
-    "lint:fix": "eslint --fix . --ignore-pattern '/dist/'",
-    "test": "node --test",
-    "types": "run-s types:tsc types:test",
-    "types:tsc": "tsc",
-    "types:test": "tsc --project tsconfig.test.json"
-  },
-  "dependencies": {
-    "@podium/browser": "1.3.0",
-    "nanostores": "1.2.0"
-  },
-  "devDependencies": {
-    "@podium/eslint-config": "1.0.21",
-    "@podium/semantic-release-config": "3.0.0",
-    "@podium/typescript-config": "1.0.0",
-    "@types/node": "24.10.9",
-    "esbuild": "0.27.3",
-    "eslint": "9.39.3",
-    "jsdom": "27.3.0",
-    "npm-run-all2": "8.0.4",
-    "prettier": "3.8.1",
-    "semantic-release": "25.0.2",
-    "typescript": "5.9.3"
-  }
+    "exports": {
+        "types": "./types/store.d.ts",
+        "require": "./dist/store.cjs",
+        "import": "./dist/store.js"
+    },
+    "license": "MIT",
+    "keywords": [
+        "micro services",
+        "micro frontend",
+        "podium"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/podium-lib/store.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "bugs": {
+        "url": "https://github.com/podium-lib/issues"
+    },
+    "homepage": "https://podium-lib.io/",
+    "files": [
+        "dist",
+        "types"
+    ],
+    "scripts": {
+        "prepublishOnly": "run-s build types",
+        "build": "run-p build:*",
+        "build:cjs": "esbuild src/store.js --outfile=dist/store.cjs --target=es2017 --format=cjs",
+        "build:esm": "esbuild src/store.js --outfile=dist/store.js --target=es2017",
+        "lint": "eslint . --ignore-pattern '/dist/'",
+        "lint:fix": "eslint --fix . --ignore-pattern '/dist/'",
+        "test": "node --test",
+        "types": "run-s types:tsc types:test",
+        "types:tsc": "tsc",
+        "types:test": "tsc --project tsconfig.test.json"
+    },
+    "dependencies": {
+        "@podium/browser": "1.3.0",
+        "nanostores": "1.2.0"
+    },
+    "devDependencies": {
+        "@podium/eslint-config": "2.0.2",
+        "@podium/semantic-release-config": "3.0.0",
+        "@podium/typescript-config": "1.0.0",
+        "@types/node": "24.10.9",
+        "esbuild": "0.27.3",
+        "eslint": "9.39.3",
+        "jsdom": "27.3.0",
+        "npm-run-all2": "8.0.4",
+        "prettier": "3.8.1",
+        "semantic-release": "25.0.2",
+        "typescript": "5.9.3"
+    }
 }

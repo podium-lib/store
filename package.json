@@ -51,7 +51,7 @@
         "@podium/semantic-release-config": "3.0.5",
         "@podium/typescript-config": "1.0.1",
         "@types/node": "24.10.9",
-        "esbuild": "0.27.4",
+        "esbuild": "0.28.1",
         "eslint": "9.39.4",
         "jsdom": "27.3.0",
         "npm-run-all2": "8.0.4",

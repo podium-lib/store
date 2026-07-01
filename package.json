@@ -48,7 +48,7 @@
     },
     "devDependencies": {
         "@podium/eslint-config": "2.0.9",
-        "@podium/semantic-release-config": "3.0.5",
+        "@podium/semantic-release-config": "3.0.6",
         "@podium/typescript-config": "1.0.1",
         "@types/node": "24.10.9",
         "esbuild": "0.28.1",
@@ -56,7 +56,7 @@
         "jsdom": "27.3.0",
         "npm-run-all2": "8.0.4",
         "prettier": "3.9.4",
-        "semantic-release": "25.0.3",
+        "semantic-release": "25.0.5",
         "typescript": "5.9.3"
     }
 }

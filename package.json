@@ -50,7 +50,7 @@
         "@podium/eslint-config": "2.0.15",
         "@podium/semantic-release-config": "3.0.7",
         "@podium/typescript-config": "1.0.1",
-        "@types/node": "24.10.9",
+        "@types/node": "26.6.6",
         "esbuild": "0.28.2",
         "eslint": "9.39.5",
         "jsdom": "27.3.0",
